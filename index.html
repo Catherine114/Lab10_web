@@ -2,14 +2,43 @@
 <html lang="ru">
 <head>
 	<meta charset="UTF-8"/>
-	<title>Lab10</title>
-	<script src=""></script>
+	<title>Крестики-Нолики</title>
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="lab10_script.js"></script>
 </head>
 <body style="background-color: #FFFFE0">
 	<h1 style="text-align: center;">Шунаева Екатерина Алексеевна - Лабораторная работа 10</h1>
-	<div><button style='padding: 7px; margin: 25px;' onClick="z1()">Задача1 </button></div>
-	<div><button style='padding: 7px; margin: 25px;' onClick="z2()">Задача2 </button> </div>
-	<div><button style='padding: 7px; margin: 25px;' onClick="z3()">Задача3 </button></div>
-	<div><button style='padding: 7px; margin: 25px;' onClick="z4()">Задача4 </button></div>
+	<div><button style='padding: 7px; margin: 25px;' onClick="z1()">Запустить игру</button></div>
+	<h1 class="txt1">КРЕСТИКИ-НОЛИКИ</h1>
+    <h5 class="txt3">Классические крестики-нолики. Первым ходит победитель.</h5>
+    <h2 class="txt2">КОЛИЧЕСТВО ПОБЕД</h2>
+    <h5 class="txt3">Первый игрок: <span id="score1" >0</span><br></h5>
+    <h5 class="txt3">Второй игрок: <span id="score2" >0</span></h5>
+    <h2 class="txt2">ХОД</h2>
+    <h5 id='whoturn' class="txt3">Ходит первый игрок - X</h5>
+    <div class="content">
+        <div class="currentPlayer">
+            <span>Сейчас ходит: <span id="curPlyr">X</span></span>
+        </div>
+        <div id="area"></div>
+        <div class="stat">
+            <table>
+                <th colspan="2">Статистика</th>
+                <tr>
+                    <td>X</td>
+                    <td><span id="sX">0</span></td>
+                </tr>
+                <tr>
+                    <td>O</td>
+                    <td><span id="sO">0</span></td>
+                </tr>
+                <tr>
+                    <td>Ничьи</td>
+                    <td><span id="sD">0</span></td>
+                </tr>
+            </table>
+        </div>	
+    </div>
 </body>
 </html>
