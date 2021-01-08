@@ -7,38 +7,36 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="lab10_script.js"></script>
 </head>
-<body style="background-color: #FFFFE0">
-	<h1 style="text-align: center;">Шунаева Екатерина Алексеевна - Лабораторная работа 10</h1>
-	<div><button style='padding: 7px; margin: 25px;' onClick="z1()">Запустить игру</button></div>
+<body style="background-color: #FFF8DC">
+	<div class="modal" id="modal">
+    	<button id="close">X</button>
+    	<h3 id="result"></h3>
+  	</div>
+	<header style="text-align: center;">Шунаева Екатерина Алексеевна - Лабораторная работа 10</header>
+	<hr>
+	<div>
+		<button class="begin" style='padding: 0px; margin: 0px;' onClick="z1()">Запустить игру</button>
+	</div>
 	<h1 class="txt1">КРЕСТИКИ-НОЛИКИ</h1>
     <h5 class="txt3">Классические крестики-нолики. Первым ходит победитель.</h5>
+    <section class="main">
+    	<hr>
     <h2 class="txt2">КОЛИЧЕСТВО ПОБЕД</h2>
-    <h5 class="txt3">Первый игрок: <span id="score1" >0</span><br></h5>
-    <h5 class="txt3">Второй игрок: <span id="score2" >0</span></h5>
+    <div class="score">
+      	<div class="firstPlayer" id="firstPlayer">
+    		<h5 class="txt3">Первый игрок(x): 0</h5>
+    	</div>
+    	<div class="secondPlayer" id="secondPlayer">
+        	<h5 class="txt3">Второй игрок(0): 0</h5>
+        </div>
+    </div>
     <h2 class="txt2">ХОД</h2>
     <h5 id='whoturn' class="txt3">Ходит первый игрок - X</h5>
-    <div class="content">
-        <div class="currentPlayer">
-            <span>Сейчас ходит: <span id="curPlyr">X</span></span>
-        </div>
-        <div id="area"></div>
-        <div class="stat">
-            <table>
-                <th colspan="2">Статистика</th>
-                <tr>
-                    <td>X</td>
-                    <td><span id="sX">0</span></td>
-                </tr>
-                <tr>
-                    <td>O</td>
-                    <td><span id="sO">0</span></td>
-                </tr>
-                <tr>
-                    <td>Ничьи</td>
-                    <td><span id="sD">0</span></td>
-                </tr>
-            </table>
-        </div>	
+    <canvas id="canvas" width="390px" height="390px" ></canvas>
+    <div class="btns">
+    	<button id="button1" style=" margin-left: 700px; margin-top: 0px;">Новый раунд</button>
+    	<button id="button2" style=" margin-left: 20px; margin-top: 0px;">Рестарт</button>
     </div>
+ 	</section>    
 </body>
 </html>
