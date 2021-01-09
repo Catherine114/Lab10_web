@@ -58,6 +58,18 @@ hr{
 	height: 30px;
 }
 
+.modal {
+  position: absolute;
+  width: 300px;
+  height: 90px;
+  background-color: #808080;
+  font-size: 18px;
+  float: left;
+  color: #F2EDE4;
+  opacity: 0;
+  font-family: "CENTURY GOTHIC";
+}
+
 #area {
     width: 156px;
     border: 1px solid #000;

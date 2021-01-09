@@ -37,6 +37,17 @@ function z1(){
 	];
 	let count = 0;
 
+	var winIndex = [
+	    [field[0][0],field[0][1],field[0][2]],
+	    [field[1][0],field[1][1],field[1][2]],
+	    [field[2][0],field[2][1],field[2][2]],
+	    [field[0][0],field[1][0],field[2][0]],
+	    [field[0][1],field[1][1],field[2][1]],
+	    [field[0][2],field[1][2],field[2][2]],
+	    [field[0][0],field[1][1],field[2][2]],
+	    [field[0][2],field[1][1],field[2][0]]
+	];
+
 	canvas.addEventListener('click', canvasClick);
 	let biasX = 0;
 	let biasY = 0;
@@ -142,45 +153,56 @@ function z1(){
         	document.getElementById("modal").style.opacity = "1";
         	h1result.innerHTML = ('Это поле занято!');
       	}
+      	winIndex = [
+	    [field[0][0],field[0][1],field[0][2]],
+	    [field[1][0],field[1][1],field[1][2]],
+	    [field[2][0],field[2][1],field[2][2]],
+	    [field[0][0],field[1][0],field[2][0]],
+	    [field[0][1],field[1][1],field[2][1]],
+	    [field[0][2],field[1][2],field[2][2]],
+	    [field[0][0],field[1][1],field[2][2]],
+	    [field[0][2],field[1][1],field[2][0]]
+	];
       	if_wineer();
     	}
 
     	draw();
 	}
 
-	var winIndex = [
-	    [field[0][0] == field[0][1] == field[0][2]],
-	    [field[1][0],field[1][1],field[1][2]],
-	    [field[2][0],field[2][1],field[2][2]],
-	    [field[0][0],field[1][0],field[2][0]],
-	    [field[0][1],field[1][1],field[1][0]],
-	    [field[0][2],field[1][2],field[2][0]],
-	    [field[0][0],field[1][1],field[2][0]],
-	    [field[0][2],field[1][1],field[2][0]]
-	];
 
 	function if_wineer(){
-		for (let i=0; i<=8; i++){
-			if (i == 'X') {
-				if (winner == 'first') {
-	        		playerFirst += 1;
-	        		firstPlayerWinsFunc();
-	      			}else if (winner == 'second') {
-	        			playerSecond += 1;
-	        			secondPlayerWinsFunc();
-	      			}
-	      		breakGame = true;
-	    	}else if (i == 'O') {
-	      		if (winner == 'first') {
-	        		playerSecond += 1;
-	        		secondPlayerWinsFunc();
-	      			}else if (winner == 'second') {
-	        			playerFirst += 1;
-	        			firstPlayerWinsFunc();
-	      			}
-	      		breakGame = true;
-	    	}
+		var win1 = false;
+		var win2 = false;
+		console.log('start check for winer');
+		for (let i=0; i<=winIndex.length-1; i++){
+
+			console.log('index = ',winIndex[i][0]);
+			if (winIndex[i][0] == winIndex[i][1] && winIndex[i][1] == winIndex[i][2] && winIndex[i][2] == 'X')
+			{
+				win1 = true;
+				console.log('win1 =',true);
+				break;
+			}
+			else if(winIndex[i][0] == winIndex[i][1] && winIndex[i][1] == winIndex[i][2] && winIndex[i][2] == 'O')
+			{
+				win2 = true;
+				console.log('win2 =',true);;
+				break;
+			}
 		}
+		if (win1 == true)
+		{
+			playerFirst += 1;
+			firstPlayerWinsFunc();
+			breakGame = true;
+		}
+		else if(win2 == true)
+		{
+			playerSecond += 1;
+			secondPlayerWinsFunc();
+			breakGame = true;
+		}
+
 	}
 
 	function draw() {
@@ -226,6 +248,10 @@ function z1(){
 	  winner = 'first';
 	  count = 0;
 	  firstPlayerWins.textContent = `Первый игрок(X): ${playerFirst}`;
+	  firstPlayerWins.style.fontFamily = "CENTURY GOTHIC";
+	  firstPlayerWins.style.fontSize= "14px";
+	  firstPlayerWins.style.color= "rgb(80, 80, 80)";
+	  firstPlayerWins.style.textAlign= "center";
 	  whoturn.textContent = `Ходит первый игрок - ${playerFirstName}`;
 	  document.getElementById("modal").style.opacity = "1";
 	  h1result.innerHTML = ('Победу одержал игрок №1(X)!');
@@ -236,6 +262,10 @@ function z1(){
 	  winner = 'second';
 	  count = 0;
 	  secondPlayerWins.textContent = `Второй игрок(O): ${playerSecond}`;
+	  secondPlayerWins.style.fontFamily = "CENTURY GOTHIC";
+		secondPlayerWins.style.fontSize= "14px";
+		secondPlayerWins.style.color= "rgb(80, 80, 80)";
+		secondPlayerWins.style.textAlign= "center";
 	  document.getElementById("modal").style.opacity = "1";
 	  h1result.innerHTML = ('Победу одержал игрок №2(O)!');
 	  document.getElementById("canvas").style.opacity = "0.5";
@@ -245,7 +275,7 @@ function z1(){
 	    document.getElementById("canvas").style.opacity = "1";
 	    ctx.clearRect(0, 0, 390, 390);
 	    draw_line();
-	    board = [
+	    field = [
 	        ['', '', ''],
 	    	['', '', ''],
 	    	['', '', '']
@@ -259,7 +289,7 @@ function z1(){
 	  	document.getElementById("canvas").style.opacity = "1";
 	  	ctx.clearRect(0, 0, 390, 390);
 	  	draw_line();
-	  	board = [
+	  	field = [
 		    ['', '', ''],
 		    ['', '', ''],
 		    ['', '', '']
@@ -273,6 +303,14 @@ function z1(){
 		whoturn.textContent = `Ходит первый игрок - ${playerFirstName}`;
 		firstPlayerWins.textContent = `Первый игрок(X): ${playerFirst}`;
 		secondPlayerWins.textContent = `Второй игрок(O): ${playerSecond}`;
+		secondPlayerWins.style.fontFamily = "CENTURY GOTHIC";
+		secondPlayerWins.style.fontSize= "14px";
+		secondPlayerWins.style.color= "rgb(80, 80, 80)";
+		firstPlayerWins.style.fontFamily = "CENTURY GOTHIC";
+	  	firstPlayerWins.style.fontSize= "14px";
+	  	firstPlayerWins.style.color= "rgb(80, 80, 80)";
+	  	firstPlayerWins.style.textAlign= "center";
+	  	secondPlayerWins.style.textAlign= "center";
 	});
 
 	function printTopLeftX() {
@@ -312,7 +350,7 @@ function z1(){
 	  ctx.lineTo(261, 129);
 	  ctx.stroke();
 	}
-	// Center
+	
 	function printCenterLeftX() {
 	  ctx.beginPath();
 	  ctx.strokeStyle = 'rgb(80, 80, 80)';
@@ -349,7 +387,7 @@ function z1(){
 	  ctx.lineTo(389, 131);
 	  ctx.stroke();
 	}
-	// Bottom
+	
 	function printBottomLeftX() {
 	  ctx.beginPath();
 	  ctx.strokeStyle = 'rgb(80, 80, 80)';
