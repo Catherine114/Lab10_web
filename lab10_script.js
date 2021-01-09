@@ -53,7 +53,7 @@ function z1(){
 
 	function canvasClick(click) {
     	biasX = click.offsetX;
-    	biastY = click.offsetY;
+    	biasY = click.offsetY;
     	playersMoveText();
   
     	if (breakGame == false) {
@@ -149,7 +149,7 @@ function z1(){
 	}
 
 	var winIndex = [
-	    [field[0][0],field[0][1],field[0][2]],
+	    [field[0][0] == field[0][1] == field[0][2]],
 	    [field[1][0],field[1][1],field[1][2]],
 	    [field[2][0],field[2][1],field[2][2]],
 	    [field[0][0],field[1][0],field[2][0]],
@@ -277,12 +277,12 @@ function z1(){
 
 	function printTopLeftX() {
   		ctx.beginPath();
-  		ctx.strokeStyle = 'rgb(80, 80, 80);';
+  		ctx.strokeStyle = 'rgb(80, 80, 80)';
 	  	ctx.moveTo(1, 1);
 	  	ctx.lineTo(129,129 );
 	  	ctx.stroke();
 	  	ctx.beginPath();
-	  	ctx.strokeStyle = 'rgb(80, 80, 80);';
+	  	ctx.strokeStyle = 'rgb(80, 80, 80)';
 	  	ctx.moveTo(1, 129);
 	  	ctx.lineTo(129, 1);
 	  	ctx.stroke();
@@ -290,24 +290,24 @@ function z1(){
 
 	function printTopCenterX() {
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
 	  ctx.moveTo(131, 1);
 	  ctx.lineTo(259, 129);
 	  ctx.stroke();
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
 	  ctx.moveTo(131, 129);
 	  ctx.lineTo(259, 1);
 	  ctx.stroke();
 	}
 	function printTopRightX() {
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
 	  ctx.moveTo(261, 1);
 	  ctx.lineTo(389, 129);
 	  ctx.stroke();
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
 	  ctx.moveTo(389, 1);
 	  ctx.lineTo(261, 129);
 	  ctx.stroke();
@@ -315,75 +315,75 @@ function z1(){
 	// Center
 	function printCenterLeftX() {
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
 	  ctx.moveTo(1, 131);
 	  ctx.lineTo(129, 259);
 	  ctx.stroke();
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
 	  ctx.moveTo(1, 259);
 	  ctx.lineTo(129, 131);
 	  ctx.stroke();
 	}
 	function printCenterCenterX() {
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
-	  ctx.moveTo(130, 130);
-	  ctx.lineTo(200, 200);
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
+	  ctx.moveTo(131, 131);
+	  ctx.lineTo(259, 259);
 	  ctx.stroke();
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
-	  ctx.moveTo(200, 130);
-	  ctx.lineTo(130, 200);
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
+	  ctx.moveTo(131, 259);
+	  ctx.lineTo(259, 131);
 	  ctx.stroke();
 	}
 	function printCenterRightX() {
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
-	  ctx.moveTo(240, 130);
-	  ctx.lineTo(310, 200);
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
+	  ctx.moveTo(261, 131);
+	  ctx.lineTo(389, 259);
 	  ctx.stroke();
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
-	  ctx.moveTo(310, 130);
-	  ctx.lineTo(240, 200);
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
+	  ctx.moveTo(261, 259);
+	  ctx.lineTo(389, 131);
 	  ctx.stroke();
 	}
 	// Bottom
 	function printBottomLeftX() {
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
-	  ctx.moveTo(20, 240);
-	  ctx.lineTo(80, 310);
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
+	  ctx.moveTo(1, 261);
+	  ctx.lineTo(129, 389);
 	  ctx.stroke();
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
-	  ctx.moveTo(80, 240);
-	  ctx.lineTo(20, 310);
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
+	  ctx.moveTo(1, 389);
+	  ctx.lineTo(129, 261);
 	  ctx.stroke();
 	}
 	function printBottomCenterX() {
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
-	  ctx.moveTo(130, 240);
-	  ctx.lineTo(200, 310);
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
+	  ctx.moveTo(131, 261);
+	  ctx.lineTo(259, 389);
 	  ctx.stroke();
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
-	  ctx.moveTo(200, 240);
-	  ctx.lineTo(130, 310);
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
+	  ctx.moveTo(131, 389);
+	  ctx.lineTo(259, 261);
 	  ctx.stroke();
 	}
 	function printBottomRightX() {
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
-	  ctx.moveTo(240, 240);
-	  ctx.lineTo(310, 310);
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
+	  ctx.moveTo(261, 261);
+	  ctx.lineTo(389, 389);
 	  ctx.stroke();
 	  ctx.beginPath();
-	  ctx.strokeStyle = 'rgb(80, 80, 80);';
-	  ctx.moveTo(310, 240);
-	  ctx.lineTo(240, 310);
+	  ctx.strokeStyle = 'rgb(80, 80, 80)';
+	  ctx.moveTo(261, 389);
+	  ctx.lineTo(389, 261);
 	  ctx.stroke();
 	}
 
@@ -406,33 +406,33 @@ function z1(){
 	
 	function printCenterLeftO() {
 	  ctx.beginPath();
-	  ctx.arc(55, 165, 40, 0, 360);
+	  ctx.arc(60, 195, 60, 0, 360);
 	  ctx.stroke();
 	}
 	function printCenterCenterO() {
 	  ctx.beginPath();
-	  ctx.arc(165, 165, 40, 0, 360);
+	  ctx.arc(195, 195, 60, 0, 360);
 	  ctx.stroke();
 	}
 	function printCenterRightO() {
 	  ctx.beginPath();
-	  ctx.arc(275, 165, 40, 0, 360);
+	  ctx.arc(325, 195, 60, 0, 360);
 	  ctx.stroke();
 	}
 	
 	function printBottomLeftO() {
 	  ctx.beginPath();
-	  ctx.arc(60, 320, 60, 0, 360);
+	  ctx.arc(60, 325, 60, 0, 360);
 	  ctx.stroke();
 	}
 	function printBottomCenterO() {
 	  ctx.beginPath();
-	  ctx.arc(195, 330, 60, 0, 360);
+	  ctx.arc(195, 325, 60, 0, 360);
 	  ctx.stroke();
 	}
 	function printBottomRightO() {
 	  ctx.beginPath();
-	  ctx.arc(325, 330, 60, 0, 360);
+	  ctx.arc(325, 325, 60, 0, 360);
 	  ctx.stroke();
 	}
 
