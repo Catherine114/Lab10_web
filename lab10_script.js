@@ -60,96 +60,128 @@ function canvasClick(click) {
       if (biasX < 130 && biasY < 130 && field[0][0] != 'X' && field[0][0] != 'O') {
         if (currentPlayer % 2 == 0) {
           printTopLeftX();
-          board[0][0] = 'X';
+          field[0][0] = 'X';
         } else {
           printTopLeftO();
-          board[0][0] = 'O';
+          field[0][0] = 'O';
         }
         currentPlayer += 1;
-      }else if (clientX < 219 && clientY < 109 && clientX > 110 && clientY > 0 && board[0][1] != 'X' && board[0][1] != 'O') {
+      }else if (biasX < 260 && biasY < 130 && biasX > 130 && field[0][1] != 'X' && field[0][1] != 'O') {
         if (currentPlayer % 2 == 0) {
-          playersMoveText();
           printTopCenterX();
-          board[0][1] = 'X';
+          field[0][1] = 'X';
         } else {
-          playersMoveText();
           printTopCenterO();
-          board[0][1] = 'O';
+          field[0][1] = 'O';
         }
         currentPlayer += 1;
-      }else if (clientX < 330 && clientY < 109 && clientX > 220 && clientY > 0 && board[0][2] != 'X' && board[0][2] != 'O') {
+      }else if (biasX < 390 && biasY < 130 && biasX > 260 && field[0][2] != 'X' && field[0][2] != 'O') {
         if (currentPlayer % 2 == 0) {
           printTopRightX();
-          board[0][2] = 'X';
+          field[0][2] = 'X';
         } else {
           printTopRightO();
-          board[0][2] = 'O';
+          field[0][2] = 'O';
         }
         currentPlayer += 1;
-      }else if (clientX < 109 && clientY < 219 && clientX > 0 && clientY > 110 && board[1][0] != 'X' && board[1][0] != 'O') {
+      }else if (biasX < 130 && biasY < 260 && biasX > 0 && biasY > 130 && field[1][0] != 'X' && field[1][0] != 'O') {
         if (currentPlayer % 2 == 0) {
           printCenterLeftX();
-          board[1][0] = 'X';
+          field[1][0] = 'X';
         } else {
           printCenterLeftO();
-          board[1][0] = 'O';
+          field[1][0] = 'O';
         }
         currentPlayer += 1;
-      }else if (clientX < 219 && clientY < 219 && clientX > 110 && clientY > 110 && board[1][1] != 'X' && board[1][1] != 'O') {
+      }else if (biasX < 260 && biasY < 260 && biasX > 130 && biasY > 130 && field[1][1] != 'X' && field[1][1] != 'O') {
         if (currentPlayer % 2 == 0) {
           printCenterCenterX();
-          board[1][1] = 'X';
+          field[1][1] = 'X';
         } else {
           printCenterCenterO();
-          board[1][1] = 'O';
+          field[1][1] = 'O';
         }
         currentPlayer += 1;
-      }else if (clientX < 330 && clientY < 219 && clientX > 220 && clientY > 110 && board[1][2] != 'X' && board[1][2] != 'O') {
+      }else if (biasX < 390 && biasY < 260 && biasX > 260 && biasY > 130 && field[1][2] != 'X' && field[1][2] != 'O') {
         if (currentPlayer % 2 == 0) {
           printCenterRightX();
-          board[1][2] = 'X';
+          field[1][2] = 'X';
         } else {
           printCenterRightO();
-          board[1][2] = 'O';
+          field[1][2] = 'O';
         }
         currentPlayer += 1;
-      }else if (clientX < 109 && clientY < 330 && clientX > 0 && clientY > 220 && board[2][0] != 'X' && board[2][0] != 'O') {
+      }else if (biasX < 130 && biasY < 390 && biasX > 0 && biasY > 260 && field[2][0] != 'X' && field[2][0] != 'O') {
         if (currentPlayer % 2 == 0) {
           printBottomLeftX();
-          board[2][0] = 'X';
+          field[2][0] = 'X';
         } else {
           printBottomLeftO();
-          board[2][0] = 'O';
+          field[2][0] = 'O';
         }
         currentPlayer += 1;
-      }else if (clientX < 219 && clientY < 330 && clientX > 110 && clientY > 220 && board[2][1] != 'X' && board[2][1] != 'O') {
+      }else if (biasX < 260 && biasY < 390 && biasX > 130 && biasY > 260 && field[2][1] != 'X' && field[2][1] != 'O') {
         if (currentPlayer % 2 == 0) {
           printBottomCenterX();
-          board[2][1] = 'X';
+          field[2][1] = 'X';
         } else {
           printBottomCenterO();
-          board[2][1] = 'O';
+          field[2][1] = 'O';
         }
         currentPlayer += 1;
-      }else if (clientX < 330 && clientY < 330 && clientX > 220 && clientY > 220 && board[2][2] != 'X' && board[2][2] != 'O') {
+      }else if (biasX < 390 && biasY < 390 && biasX > 260 && biasY > 260 && field[2][2] != 'X' && field[2][2] != 'O') {
         if (currentPlayer % 2 == 0) {
           printBottomRightX();
-          board[2][2] = 'X';
+          field[2][2] = 'X';
         } else {
           printBottomRightO();
-          board[2][2] = 'O';
+          field[2][2] = 'O';
         }
         currentPlayer += 1;
       }else {
         document.getElementById("modal").style.opacity = "1";
         h1result.innerHTML = ('Это поле занято!');
       }
-      ifWin();
+      if_wineer();
     }
 
     draw();
 }
 
+var winIndex = [
+    [field[0][0],field[0][1],field[0][2]],
+    [field[1][0],field[1][1],field[1][2]],
+    [field[2][0],field[2][1],field[2][2]],
+    [field[0][0],field[1][0],field[2][0]],
+    [field[0][1],field[1][1],field[1][0]],
+    [field[0][2],field[1][2],field[2][0]],
+    [field[0][0],field[1][1],field[2][0]],
+    [field[0][2],field[1][1],field[2][0]]
+];
+
+function if_wineer(){
+	for (i=0; i<=8; i++){
+		if (i == 'X') {
+			if (winner == 'first') {
+        		player1 += 1;
+        		firstPlayerWinsFunc();
+      			}else if (winner == 'second') {
+        			player2 += 1;
+        			secondPlayerWinsFunc();
+      			}
+      		gameStopper = true;
+    	}else if (i == 'O') {
+      		if (winner == 'first') {
+        		player2 += 1;
+        		secondPlayerWinsFunc();
+      			}else if (winner == 'second') {
+        			player1 += 1;
+        			firstPlayerWinsFunc();
+      			}
+      		gameStopper = true;
+    	}
+	}
+}
 
 
 
